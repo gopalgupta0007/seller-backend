@@ -1,0 +1,85 @@
+Seller Registration:
+	Software Requirement : SR-1001
+	Category : Front End
+	Development Technology : HTML & CSS
+	Filename : seller_register.jsp
+	Details :
+		Create a jsp page through which system can register a new seller
+		It will include a form which have the following fields:
+			1. First Name => type=text; name=seller_first_name; id=seller_first_name; placeholder=First Name
+			2. Middle Name => type=text; name=seller_middle_name; id=seller_middle_name; placeholder=Middle Name
+			3. Last Name => type=text; name=seller_last_name; id=seller_last_name; placeholder=Last Name
+			4. Contact Number => type=number; name=seller_contact_number; id=seller_contact_number; placeholder=Contact Number
+			5. Username => type=text; name=seller_username; id=seller_username; placeholder=Enter a new username
+			6. Password => type=password; name=seller_password; id=seller_password; placeholder=Create a strong password
+			7. Confirm Password => type=password; name=seller_confirm_password; id=seller_confirm_password; placeholder=Confirm Password
+			8. Brand Name => type=text; name=seller_brand_name; id=seller_brand_name; placeholder=Brand
+			9. Brand Category => type=text; name=seller_brand_category; id=seller_brand_category; placeholder=Brand Category
+			10. Address => type=text; name=seller_address; id=seller_address; placeholder=Address
+			11. Since => type=Date; name=seller_since; id=seller_since; placeholder=Sellig Since
+		All fields are medatory
+		Beautify this form using css (Note: Do not use bootstrap or any other css framework)
+		Two buttons will be there:
+			1. Confirm and Submit -> Seller Singup
+			2. Already has a seller account -> Seller Signin
+		The page should be fully responsive
+	
+	------------------------------------------------------------------------------------------------------------------------------------------------------------------
+	
+	Software Requirement : SR-1002
+	Category : Front End
+	Development Technology : JQuery/Javascript
+	Filename : seller_register.jsp
+	Details : 
+		Write the following validation rules under script tag as javascript functions:
+			1. seller_first_name , seller_middle_name and seller_last_name : 
+				=> 2<length<15
+				=> Should not contain any special character or numeric value
+				=> Should not contain any space between
+				=> Should not be empty
+			2. seller_contact_number :
+				=> length==10
+				=> Should not contain any character other than numeric
+				=> Should not contain any space between
+				=> Should not be empty
+			3. seller_username :
+				=> 5<length<20
+				=> Should not contain any special character
+				=> Must be alphanumeric
+				=> Should not contain any space between
+				=> Should not be empty
+			4. seller_password :
+				=> 8<=length<=16
+				Pending...=> Must contain atleast 1 numeric and 1 special character
+				=> Should not contain any space between
+				=> Should not be empty
+			5. seller_confirm_password :
+				=>Must be equal to seller_password
+			6. seller_brand_name :
+				=> Should not be empty
+		Pending7. seller_brand_category :
+				=>Must be a value from given set of categories
+					Home & Kitchen
+					Beauty
+					Clothing, Shoes & Jewelry
+					Toys & games
+					Health, Household & Baby Care
+					Baby
+					Electronics 
+					Sports & outdoors
+					Pet Supplies
+					Office Supplies
+				=>Should not be empty
+			8. seller_address :
+				=> 5<length<100
+				=> Should not be empty
+				
+			9. seller_since :
+				=>Should not be empty
+				=>Must not be a future date
+	
+	------------------------------------------------------------------------------------------------------------------------------------------------------------------
+
+
+note : type=tel
+	   catagory making
