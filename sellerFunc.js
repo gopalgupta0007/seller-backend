@@ -28,7 +28,7 @@ const isEmpty = (val, propertyName) => {
     }
 }
 const isSpace = (val, propertyName) => {
-    if(val.match(" ")) {
+    if (val.match(" ")) {
         alert(`do not take any space in ${propertyName}`);
         return false
     } else {
@@ -38,65 +38,65 @@ const isSpace = (val, propertyName) => {
 const togglePassword = () => {
     var x = document.getElementById("myInput");
     if (x.type === "password") {
-      x.type = "text";
+        x.type = "text";
     } else {
-      x.type = "password";
+        x.type = "password";
     }
-  }
+}
 const checkContactNum = (sellerContect) => {
     for (let z = 0; z < sellerContect.length; z++) {
-        if(numbers.includes(sellerContect.charAt(z))) {
-            if(sellerContect.length == 10){
-                console.info("Entered contect number")    
+        if (sellerContect.charAt(z).match(/[0-9]/g)) {
+            if (sellerContect.length == 10) {
+                console.info("Entered contect number")
                 continue;
-            }else{
+            } else {
                 alert("your contect number must be is in 10 digit.")
                 break;
             }
-        }else{
+        } else {
             alert("letter/character are not allowed in contect number.");
             break;
         }
     }
 }
-const checkUsername = (sellerName) =>{
-    if(sellerName.length>5 && sellerName.length<20){
+const checkUsername = (sellerName) => {
+    if (sellerName.length > 5 && sellerName.length < 20) {
         for (let t = 0; t < sellerName.length; t++) {
             if (sellerName.charAt(t).match(/[a-z0-9]/i)) {
-                if(sellerName.match(/[0-9]/g)){
+                if (sellerName.match(/[0-9]/g)) {
                     console.info("username Enterd");
-                }else{
+                } else {
                     alert(`username is not alphanumeric`);
                     break;
                 }
                 continue;
-            }else{
+            } else {
                 alert(`Do not use inligal character in the username`);
                 break
-            }            
-        }   
-    }else{
-        (sellerName.length!==0)?alert(`your username must be is in the range`):console.log("");
+            }
+        }
+    } else {
+        (sellerName.length !== 0) ? alert(`your username must be is in the range`) : console.log("");
     }
 }
-const isPassword = (sellerPassword) =>{
-    if(sellerPassword.length>=8 && sellerPassword.length<=16){
+const isPassword = (sellerPassword) => {
+    if (sellerPassword.length >= 8 && sellerPassword.length <= 16) {
         for (let p = 0; p < sellerPassword.length; p++) {
-            if(sellerPassword.match(/[a-zA-Z0-9]/i)) {
-                // listOfChar.includes(sellerPassword.charAt(p))
-                // alert(sellerPassword.charAt(p));
-                (sellerPassword.length-1 == p)?console.info("password Entered"):console.log(undefined);          
-            }else{
+            if (sellerPassword.match(/[a-zA-Z]/g) && sellerPassword.match(/[a-zA-Z]/g) && sellerPassword.match(/[^a-zA-Z0-9]/g)) {
+                console.log("password Entered")
+                return true
+            } else {
                 alert(`Must contain atleast 1 numeric and 1 special character `);
+                return false
                 break;
-            }  
+            }
         }
-    }else{
-        (sellerPassword.length!==0)?alert(`your username must be is in the range`):console.log("");
+    } else {
+        (sellerPassword.length !== 0) ? alert(`your username must be is in the range`) : console.log("");
     }
 }
 const isBothPasswordEqual = (password, confirmPassword) => {
-    if (password == confirmPassword) {
+    if (password == confirmPassword && isPassword(password) && isPassword(confirmPassword)) {
         alert("password matched")
         console.info("password matched")
         return true
@@ -108,4 +108,4 @@ const isBothPasswordEqual = (password, confirmPassword) => {
 };
 
 
-export { toCheckSellerInfo, checkChar, checkContactNum, checkUsername, isPassword, isBothPasswordEqual, isEmpty, };
+export { toCheckSellerInfo, checkChar, checkContactNum, checkUsername, isBothPasswordEqual, isEmpty, };
