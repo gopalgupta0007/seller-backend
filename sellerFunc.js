@@ -5,7 +5,7 @@ function toCheckSellerInfo(sellerName, str) {
 }
 function checkChar(sellerName, str) {
     for (let a = 0; a < sellerName.length; a++) {
-        if (legalChar.includes(sellerName.charAt(a))) {
+        if (sellerName.charAt(a).match(/[a-z0-9]/i)) {
             if (sellerName.length > 2 && sellerName.length < 15) {
                 continue;
             } else {
@@ -84,22 +84,24 @@ const isPassword = (sellerPassword) =>{
         for (let p = 0; p < sellerPassword.length; p++) {
             if(sellerPassword.match(/[a-zA-Z0-9]/i)) {
                 // listOfChar.includes(sellerPassword.charAt(p))
-                alert(sellerPassword.charAt(p));
-                console.info("password Entered");          
+                // alert(sellerPassword.charAt(p));
+                (sellerPassword.length-1 == p)?console.info("password Entered"):console.log(undefined);          
             }else{
                 alert(`Must contain atleast 1 numeric and 1 special character `);
                 break;
             }  
         }
     }else{
-        (sellerName.length!==0)?alert(`your username must be is in the range`):console.log("");
+        (sellerPassword.length!==0)?alert(`your username must be is in the range`):console.log("");
     }
 }
 const isBothPasswordEqual = (password, confirmPassword) => {
     if (password == confirmPassword) {
         alert("password matched")
+        console.info("password matched")
         return true
     } else {
+        alert("your password is not matched")
         console.info("your password is not matched")
         return false
     }
